@@ -17,7 +17,7 @@ const int kTwelveForRest = 12;
 
 const int kMaxHour = 23;
 const int kMaxMinute = 59;
-}
+}  // namespace
 
 int main() {
     int hoursEuropeanFormate = 0;
