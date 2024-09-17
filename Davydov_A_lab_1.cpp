@@ -82,19 +82,17 @@ int main() {
         }
         std::cout << "ночи \n";
         return 0;
-
-    } else {
-        if (kMorningStart <= hoursEuropeanFormate && hoursEuropeanFormate < kHalfADay) {
-            std::cout << "утра ровно \n";
-            return 0;
-        } else if (kHalfADay <= hoursEuropeanFormate && hoursEuropeanFormate < kEveningStart) {
-            std::cout << "дня ровно \n";
-            return 0;
-        } else if (kEveningStart <= hoursEuropeanFormate && hoursEuropeanFormate <= kMaxHour) {
-            std::cout << "вечера ровно \n";
-            return 0;
-        }
-        std::cout << "ночи ровно \n";
+    }
+    if (kMorningStart <= hoursEuropeanFormate && hoursEuropeanFormate < kHalfADay) {
+        std::cout << "утра ровно \n";
+        return 0;
+    } else if (kHalfADay <= hoursEuropeanFormate && hoursEuropeanFormate < kEveningStart) {
+        std::cout << "дня ровно \n";
+        return 0;
+    } else if (kEveningStart <= hoursEuropeanFormate && hoursEuropeanFormate <= kMaxHour) {
+        std::cout << "вечера ровно \n";
         return 0;
     }
+    std::cout << "ночи ровно \n";
+    return 0;
 }
