@@ -18,10 +18,10 @@ const int kHourGenitiveSingularRightBoundary = 5;
 
 const int kMinuteNominativeSingular = 1;
 const int kMinuteGenetivePluralStart = 11;
+const int kMinuteGenetivePluralEnd = 20;
 const int kMinuteNominativePluralLeftBoundary = 1;
 const int kMinuteNominativePluralRightBoundary = 5;
-const int kMinuteGenetivePluralStart = 11;
-const int kMinuteGenetivePluralEnd = 20;
+
 
 const int kBaseDecimal = 10;
 const int kBaseHoursEnglishFormat = 12;
