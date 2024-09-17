@@ -22,7 +22,6 @@ const int kMinuteGenetivePluralEnd = 20;
 const int kMinuteNominativePluralLeftBoundary = 1;
 const int kMinuteNominativePluralRightBoundary = 5;
 
-
 const int kBaseDecimal = 10;
 const int kBaseHoursEnglishFormat = 12;
 }  // namespace
