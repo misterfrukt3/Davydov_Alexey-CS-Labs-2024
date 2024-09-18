@@ -35,13 +35,10 @@ int main() {
     if (hoursEuropeanFormat < kMinHour || hoursEuropeanFormat > kMaxHour || minutes < kMinMinute || minutes > kMaxMinute) {
         std::cout << "Введены недопустимые данные\n";
         return -1;
-    }
-
-    if (hoursEuropeanFormat == kHalfADay && minutes == kMinMinute) {
+    } else if (hoursEuropeanFormat == kHalfADay && minutes == kMinMinute) {
         std::cout << "Полдень\n";
         return 0;
-    }
-    if (hoursEuropeanFormat == kMinHour && minutes == kMinMinute) {
+    } else if (hoursEuropeanFormat == kMinHour && minutes == kMinMinute) {
         std::cout << "Полночь\n";
         return 0;
     }
