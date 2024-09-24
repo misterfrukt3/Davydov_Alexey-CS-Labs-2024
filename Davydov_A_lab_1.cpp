@@ -26,7 +26,7 @@ const int kBaseDecimal = 10;
 const int kBaseHoursEnglishFormat = 12;
 }  // namespace
 
-int main() {
+int main(int, char**) {
     int hoursEuropeanFormat = 0;
     int minutes = 0;
     std::cout << "Введите часы (0<=x<=23) и минуты (0<=y<=59) через пробел: \n";
