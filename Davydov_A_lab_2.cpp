@@ -3,60 +3,62 @@
 #include <iostream>
 
 namespace {
-const double kPrecision = 0.000001;
+const int kStepSizeForDivisibilityByFive = 5;
 
 const int kNegativeALimit = 10;
-const int kNaturalALimit = 9;
-const int kANaturalNegativeDivision = 0;
+const int kPositiveALimit = 9;
+const int kAPositiveNegativeDivision = 0;
 
-const int kNaturalAStep = 2;
+const int kPositiveAStep = 2;
 const int kNegativeAStep = 3;
-const double kXStep = 0.2;
 
-const int kNaturalAStart = 2;
+const int kPositiveAStart = 2;
 const int kNegativeAStart = 3;
 
-const int kPowerTwo = 2;
-const int kPowerThree = 3;
+const double kXStep = 0.2;
+const double kPrecision = 1e-6;
+const int kCountWithVariables = 10;
+const int kCountWithFunction = 15;
 
-const int kBaseRemainderFive = 5;
-const int kMinDivisionRemainder = 0;
-const int kSpacingRestrictionVariables = 10;
-const int kSpacingRestrictionFunction = 15;
-
-const int kThirdTerm = 3;
-const int KFithTerm = 5;
-const int kTenthTerm = 10;
+const int kPartialSumThirdTerms = 3;
+const int KPartialSumFithTerms = 5;
+const int kPartialSumTenthTerms = 10;
 }  // namespace
 
-void task1() {
+void Task1() {
     int n = 0;
     int m = 0;
     std::cout << "Введите значение n: ";
     std::cin >> n;
+    if (n <= 0) {
+        std::cout << "Введено недопустимое значение n\n";
+        return;
+    }
     std::cout << "Введите значение m (m < n): ";
     std::cin >> m;
     if (m >= n) {
         std::cout << "Введено недопустимое значение m\n";
-    } else {
-        int sumNumberOnSegment = 0;
-        for (int i = 1; i <= n; ++i) {
-            if (i % kBaseRemainderFive == kMinDivisionRemainder && i % m != kMinDivisionRemainder) {
-                sumNumberOnSegment += i;
-            }
-        }
-        std::cout << "Сумма чисел, которые делятся на 5 и не делятся на " << m << ": " << sumNumberOnSegment << std::endl;
+        return;
     }
+
+    int sum = 0;
+    for (int i = kStepSizeForDivisibilityByFive; i <= n; i += kStepSizeForDivisibilityByFive) {
+        if (i % m != 0) {
+            sum += i;
+        }
+    }
+    std::cout << "Сумма чисел, которые делятся на 5 и не делятся на " << m << ": " << sum << std::endl;
 }
 
-void task2() {
-    int a = 0;
+void Task2() {
+    double a = 0;
     double S = 1;
     std::cout << "Введите значение a: ";
     std::cin >> a;
-    if (a >= kANaturalNegativeDivision) {
-        for (int i = kNaturalAStart; i < kNaturalALimit; i += kNaturalAStep) {
-            S *= (pow(i, kPowerTwo) - a);
+
+    if (a >= kAPositiveNegativeDivision) {
+        for (int i = kPositiveAStart; i < kPositiveALimit; i += kPositiveAStep) {
+            S *= i * i - a;
         }
     } else {
         for (int i = kNegativeAStart; i < kNegativeALimit; i += kNegativeAStep) {
@@ -66,54 +68,56 @@ void task2() {
     std::cout << "Результат: " << S << std::endl;
 }
 
-void task3() {
-    std::cout << std::setw(kSpacingRestrictionVariables) << "x" << std::setw(kSpacingRestrictionFunction) << "Y(x)"
-              << std::setw(kSpacingRestrictionFunction) << "S(x)" << std::setw(kSpacingRestrictionVariables) << "N" << std::endl;
+void Task3() {
+    std::cout << std::setw(kCountWithVariables) << "x" << std::setw(kCountWithFunction) << "Y(x)" << std::setw(kCountWithFunction) << "S(x)"
+              << std::setw(kCountWithVariables) << "N" << std::endl;
+    double x = 0;
 
-    for (double x = 0; x <= 1; x += kXStep) {
-        double Yx = x * x * atan(x);
+    while (x <= 1.0) {
+        double Yx = x * x * std::atan(x);
         double sum = 0.0;
-        double term = pow(x, kPowerThree);
+        double term = x * x * x;
         int n = 0;
 
-        while (fabs(term) > kPrecision) {
+        while (std::fabs(term) > kPrecision) {
             sum += term;
-            n++;
-            double k = -pow(x, kPowerTwo) / (2 * n + 1);
+            ++n;
+            double k = -(x * x) * (2 * n - 1) / (2 * n + 1);
             term *= k;
         }
-        std::cout << std::setw(kSpacingRestrictionVariables) << x << std::setw(kSpacingRestrictionFunction) << Yx
-                  << std::setw(kSpacingRestrictionFunction) << sum << std::setw(kSpacingRestrictionVariables) << n << std::endl;
+
+        std::cout << std::setw(kCountWithVariables) << x << std::setw(kCountWithFunction) << Yx << std::setw(kCountWithFunction) << sum
+                  << std::setw(kCountWithVariables) << n << std::endl;
+        x += kXStep;
     }
 }
 
-void task4() {
+void Task4() {
     int n = 0;
     std::cout << "Введите значение n: ";
     std::cin >> n;
+    if (n <= 0) {
+        std::cout << "Введено недопустимое значение n\n";
+        return;
+    }
     if (n >= 3) {
         std::cout << "Промежуточные значения:" << std::endl;
     }
-    double y = sqrt(2 * n + 1);
+    double y = std::sqrt(2 * n + 1);
     for (int i = n - 1; i >= 1; --i) {
-        y = sqrt(2 * i + 1 + y);
-        if (i == n - kThirdTerm) {
-            std::cout << "3 члена: " << y << std::endl;
-        }
-        if (i == n - KFithTerm) {
-            std::cout << "5 членов: " << y << std::endl;
-        }
-        if (i == n - kTenthTerm) {
-            std::cout << "10 членов: " << y << std::endl;
+        y = std::sqrt(2 * i + 1 + y);
+        if (i == n - kPartialSumThirdTerms || i == n - KPartialSumFithTerms || i == n - kPartialSumTenthTerms) {
+            std::cout << n - i << " члена: " << y << std::endl;
         }
     }
     std::cout << "y для n = " << n << ": " << y << std::endl;
 }
 
-int main() {
-    char choice = ' ';
-    char ContinueOrEnd = ' ';
-    while (ContinueOrEnd != 'n') {
+int main(int, char**) {
+    int task = 0;
+    char continueExecution = 'y';
+
+    while (continueExecution == 'y') {
         std::cout << "Выберите задание:\n";
         std::cout << "1. Найти сумму чисел, которые делятся на 5 и не делятся на m\n";
         std::cout << "2. Вычислить произведение в зависимости от a\n";
@@ -121,28 +125,28 @@ int main() {
         std::cout << "4. Вычислить y по формуле с вложенными квадратными корнями\n";
         std::cout << "0. Выйти\n";
         std::cout << "Ваш выбор: ";
-        std::cin >> choice;
+        std::cin >> task;
 
-        switch (choice) {
-            case '0':
+        switch (task) {
+            case 0:
                 return 0;
-            case '1':
-                task1();
+            case 1:
+                Task1();
                 break;
-            case '2':
-                task2();
+            case 2:
+                Task2();
                 break;
-            case '3':
-                task3();
+            case 3:
+                Task3();
                 break;
-            case '4':
-                task4();
+            case 4:
+                Task4();
                 break;
             default:
                 std::cout << "Неверный выбор!" << std::endl;
         }
         std::cout << "Продолжить работу? (y/n)\n";
-        std::cin >> ContinueOrEnd;
+        std::cin >> continueExecution;
     }
     return 0;
 }
