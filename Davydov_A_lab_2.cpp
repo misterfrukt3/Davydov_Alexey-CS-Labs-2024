@@ -1,7 +1,6 @@
 #include <cmath>
 #include <iomanip>
 #include <iostream>
-#include <utility>
 
 namespace {
 const double kPrecision = 0.000001;
@@ -114,7 +113,7 @@ void task4() {
 int main() {
     char choice = ' ';
     char ContinueOrEnd = ' ';
-    do {
+    while (ContinueOrEnd != 'n') {
         std::cout << "Выберите задание:\n";
         std::cout << "1. Найти сумму чисел, которые делятся на 5 и не делятся на m\n";
         std::cout << "2. Вычислить произведение в зависимости от a\n";
@@ -144,6 +143,6 @@ int main() {
         }
         std::cout << "Продолжить работу? (y/n)\n";
         std::cin >> ContinueOrEnd;
-    } while (ContinueOrEnd != 'n');
+    }
     return 0;
 }
