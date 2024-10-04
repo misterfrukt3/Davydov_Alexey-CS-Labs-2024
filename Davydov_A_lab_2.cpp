@@ -6,8 +6,8 @@ namespace {
 const int kStepSizeForDivisibilityByFive = 5;
 
 const int kNegativeALimit = 10;
-const int kPositiveALimit = 9;
-const int kAPositiveNegativeDivision = 0;
+const int kNoneNegativeALimit = 9;
+const int kANegativeDivision = 0;
 
 const int kPositiveAStep = 2;
 const int kNegativeAStep = 3;
@@ -56,8 +56,8 @@ void Task2() {
     std::cout << "Введите значение a: ";
     std::cin >> a;
 
-    if (a >= kAPositiveNegativeDivision) {
-        for (int i = kPositiveAStart; i < kPositiveALimit; i += kPositiveAStep) {
+    if (a >= kANegativeDivision) {
+        for (int i = kPositiveAStart; i < kNoneNegativeALimit; i += kPositiveAStep) {
             S *= i * i - a;
         }
     } else {
