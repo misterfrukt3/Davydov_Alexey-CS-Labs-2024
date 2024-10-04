@@ -12,7 +12,7 @@ const int kANegativeDivision = 0;
 const int kPositiveAStep = 2;
 const int kNegativeAStep = 3;
 
-const int kPositiveAStart = 2;
+const int kNoneNegativeAStart = 2;
 const int kNegativeAStart = 3;
 
 const double kXStep = 0.2;
@@ -57,7 +57,7 @@ void Task2() {
     std::cin >> a;
 
     if (a >= kANegativeDivision) {
-        for (int i = kPositiveAStart; i < kNoneNegativeALimit; i += kPositiveAStep) {
+        for (int i = kNoneNegativeAStart; i < kNoneNegativeALimit; i += kPositiveAStep) {
             S *= i * i - a;
         }
     } else {
