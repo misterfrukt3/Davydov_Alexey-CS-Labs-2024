@@ -16,4 +16,4 @@ struct Key {
 [[nodiscard]] int DecryptMessage(Key privateKey, int message);
 
 void RunApplication();
-}
+}  // namespace RSA
