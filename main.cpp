@@ -1,6 +1,6 @@
-#include "rsa.h"
-
 #include <iostream>
+
+#include "rsa.h"
 
 int main(int, char**) {
     RSA::Key publicKey;
@@ -10,12 +10,12 @@ int main(int, char**) {
 
     int mess = 0;
     std::cout << "Введите зашифрованное сообщение:" << std::endl;
-    std::cin>>mess;
+    std::cin >> mess;
 
-    RSA::Key privateKey =  RSA::CalculatePrivateKey(publicKey);
+    RSA::Key privKey = RSA::CalculatePrivKey(publicKey);
 
-    std::cout << "Расшифрованное сообщение:"<<std::endl;
-    std::cout << RSA::DecryptMessage(privateKey, mess) << std::endl;
+    std::cout << "Расшифрованное сообщение:" << std::endl;
+    std::cout << RSA::DecryptMessage(privKey, mess) << std::endl;
 
     return 0;
 }

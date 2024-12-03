@@ -2,16 +2,16 @@
 
 namespace RSA {
 struct PrimeDividers {
-    int first = 0;
-    int second = 0;
+    int q = 0;
+    int p = 0;
 };
 
 struct Key {
-    int exponent = 0;
-    int module = 1;
+    int e = 0;
+    int N = 1;
 };
 
-[[nodiscard]] PrimeDividers CalculatePrimeFactorization(int number);
-[[nodiscard]] Key CalculatePrivateKey(Key publicKey);
+[[nodiscard]] PrimeDividers CalculatePrimeFact(int number);
+[[nodiscard]] Key CalculatePrivKey(Key publicKey);
 [[nodiscard]] int DecryptMessage(Key privateKey, int message);
 }
