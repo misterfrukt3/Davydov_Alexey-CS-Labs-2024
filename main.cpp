@@ -3,6 +3,7 @@
 #include "rsa.h"
 
 int main(int, char**) {
+    RunApplication();
     RSA::Key publicKey;
 
     std::cout << "Введите открытый ключ через пробел(пару чисел (e, N))" << std::endl;

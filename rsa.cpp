@@ -39,4 +39,8 @@ namespace RSA {
 
     return result;
 }
+
+void RunApplication() {
+    
+}
 }  // namespace RSA

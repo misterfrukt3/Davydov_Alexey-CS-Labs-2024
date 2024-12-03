@@ -14,4 +14,6 @@ struct Key {
 [[nodiscard]] PrimeDividers CalculatePrimeFact(int number);
 [[nodiscard]] Key CalculatePrivKey(Key publicKey);
 [[nodiscard]] int DecryptMessage(Key privateKey, int message);
+
+void RunApplication();
 }
