@@ -20,6 +20,9 @@
 *.dylib
 *.dll
 *.
+*.internal
+*.make
+*.dir
 
 # Fortran module files
 *.mod
