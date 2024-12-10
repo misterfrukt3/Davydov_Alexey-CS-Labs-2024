@@ -23,7 +23,7 @@
 *.internal
 *.make
 *.dir
-
+*.file
 # Fortran module files
 *.mod
 *.smod

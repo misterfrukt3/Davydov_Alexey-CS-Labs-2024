@@ -226,6 +226,15 @@ lab_4_IS_TOP_LEVEL:STATIC=ON
 lab_4_SOURCE_DIR:STATIC=/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024
 
 //Value Computed by CMake
+lab_4__BINARY_DIR:STATIC=/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/build
+
+//Value Computed by CMake
+lab_4__IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+lab_4__SOURCE_DIR:STATIC=/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024
+
+//Value Computed by CMake
 lab_5_BINARY_DIR:STATIC=/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/build
 
 //Value Computed by CMake
