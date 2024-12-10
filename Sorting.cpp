@@ -5,25 +5,25 @@
 #include <random>
 
 namespace {
-const int kMinIntElement = 0;
-const int kMaxIntElement = 99;
+const int kRandomMin = 0;
+const int kRandomMax = 99;
 
-const size_t kStaticArraySize = 7;
+const size_t kFixedArraySize = 7;
 
 const int kColumnWidth = 20;
 const int kColumnWidthTitle = 50;
 
-void FillArrayWithRandomValues(int* array, size_t arraySize) {
+void FillArrayRandomValues(int* array, size_t arraySize) {
     if (!array) {
         return;
     }
 
     std::random_device r{};
-    std::default_random_engine randomEngine(r());
-    std::uniform_int_distribution distribution(kMinIntElement, kMaxIntElement);
+    std::default_random_engine engine(r());
+    std::uniform_int_distribution distribution(kRandomMin, kRandomMax);
 
     for (size_t i = 0; i < arraySize; ++i) {
-        array[i] = distribution(randomEngine);
+        array[i] = distribution(engine);
     }
 
 }
@@ -50,20 +50,46 @@ void PrintArray(const int* array, size_t arraySize) {
     std::cout << std::endl;
 }
 
-void PrintResult(int comparisons, int swaps) {
-    std::cout << "Количество сравнений: " << comparisons << std::endl;
-    std::cout << "Количество перестановок: " << swaps << std::endl;
+void PrintResult(int compareCount, int swapCount) {
+    std::cout << "Количество сравнений: " << compareCount << std::endl;
+    std::cout << "Количество перестановок: " << swapCount << std::endl;
 }
 }  // namespace
 
 namespace Sorting {
-void BubbleSort(int* array, size_t arraySize, int& comparisons, int& swaps, bool ascending) {
+void SortSelection(int* array, size_t arraySize, int& compareCount, int& swapCount, bool ascending) {
     if (!array) {
         return;
     }
 
-    comparisons = 0;
-    swaps = 0;
+    compareCount = 0;
+    swapCount = 0;
+
+    for (size_t i = 0; i < arraySize - 2; ++i) {
+        size_t requiredIndex = i;
+        for (size_t j = i + 1; j < arraySize; ++j) {
+            if (ascending ? (array[j] < array[requiredIndex]) : (array[j] > array[requiredIndex])) {
+                requiredIndex = j;
+            }
+
+            ++compareCount;
+        }
+
+        if (requiredIndex != i) {
+            std::swap(array[i], array[requiredIndex]);
+
+            ++swapCount;
+        }
+    }
+}
+
+void SortBubble(int* array, size_t arraySize, int& compareCount, int& swapCount, bool ascending) {
+    if (!array) {
+        return;
+    }
+
+    compareCount = 0;
+    swapCount = 0;
 
     bool swapped = false;
 
@@ -73,11 +99,11 @@ void BubbleSort(int* array, size_t arraySize, int& comparisons, int& swaps, bool
             if (ascending ? (array[j] > array[j + 1]) : (array[j] < array[j + 1])) {
                 std::swap(array[j], array[j + 1]);
 
-                ++swaps;
+                ++swapCount;
                 swapped = true;
             }
 
-            ++comparisons;
+            ++compareCount;
         }
 
         if (!swapped) {
@@ -86,78 +112,54 @@ void BubbleSort(int* array, size_t arraySize, int& comparisons, int& swaps, bool
     }
 }
 
-void SelectionSort(int* array, size_t arraySize, int& comparisons, int& swaps, bool ascending) {
-    if (!array) {
-        return;
-    }
 
-    comparisons = 0;
-    swaps = 0;
 
-    for (size_t i = 0; i < arraySize - 2; ++i) {
-        size_t requiredIndex = i;
-        for (size_t j = i + 1; j < arraySize; ++j) {
-            if (ascending ? (array[j] < array[requiredIndex]) : (array[j] > array[requiredIndex])) {
-                requiredIndex = j;
-            }
+void RunStaticArrayExample() {
+    int arraySelectionSort[kFixedArraySize];
+    FillArrayRandomValues(arraySelectionSort, kFixedArraySize);
 
-            ++comparisons;
-        }
+    int compareCount = 0;
+    int swapCount = 0;
 
-        if (requiredIndex != i) {
-            std::swap(array[i], array[requiredIndex]);
+    int arrayBubbleSort[kFixedArraySize];
 
-            ++swaps;
-        }
-    }
-}
-
-void ExecuteStaticArraySort() {
-    int arraySelectionSort[kStaticArraySize];
-    FillArrayWithRandomValues(arraySelectionSort, kStaticArraySize);
-
-    int comparisons = 0;
-    int swaps = 0;
-
-    int arrayBubbleSort[kStaticArraySize];
-
-    CopyArray(arraySelectionSort, arrayBubbleSort, kStaticArraySize);
+    CopyArray(arraySelectionSort, arrayBubbleSort, kFixedArraySize);
 
     std::cout << "Исходный массив: ";
-    PrintArray(arraySelectionSort, kStaticArraySize);
+    PrintArray(arraySelectionSort, kFixedArraySize);
     std::cout << "-------------------------------------------------\n";
-    SelectionSort(arraySelectionSort, kStaticArraySize, comparisons, swaps);
+    SortSelection(arraySelectionSort, kFixedArraySize, compareCount, swapCount);
     std::cout << "Сортировка выбором по возрастанию: ";
-    PrintArray(arraySelectionSort, kStaticArraySize);
-    PrintResult(comparisons, swaps);
+    PrintArray(arraySelectionSort, kFixedArraySize);
+    PrintResult(compareCount, swapCount);
     std::cout << "-------------------------------------------------\n";
-    SelectionSort(arraySelectionSort, kStaticArraySize, comparisons, swaps);
+    SortSelection(arraySelectionSort, kFixedArraySize, compareCount, swapCount);
     std::cout << "Повторная сортировка выбором по возрастанию: ";
-    PrintArray(arraySelectionSort, kStaticArraySize);
-    PrintResult(comparisons, swaps);
+    PrintArray(arraySelectionSort, kFixedArraySize);
+    PrintResult(compareCount, swapCount);
     std::cout << "-------------------------------------------------\n";
-    SelectionSort(arraySelectionSort, kStaticArraySize, comparisons, swaps, false);
+    SortSelection(arraySelectionSort, kFixedArraySize, compareCount, swapCount, false);
     std::cout << "Сортировка выбором по убыванию: ";
-    PrintArray(arraySelectionSort, kStaticArraySize);
-    PrintResult(comparisons, swaps);
+    PrintArray(arraySelectionSort, kFixedArraySize);
+    PrintResult(compareCount, swapCount);
     std::cout << "-------------------------------------------------\n";
-    BubbleSort(arrayBubbleSort, kStaticArraySize, comparisons, swaps);
+    SortBubble(arrayBubbleSort, kFixedArraySize, compareCount, swapCount);
     std::cout << "Сортировка пузырьком по возрастанию: ";
-    PrintArray(arrayBubbleSort, kStaticArraySize);
-    PrintResult(comparisons, swaps);
+    PrintArray(arrayBubbleSort, kFixedArraySize);
+    PrintResult(compareCount, swapCount);
     std::cout << "-------------------------------------------------\n";
-    BubbleSort(arrayBubbleSort, kStaticArraySize, comparisons, swaps);
+    SortBubble(arrayBubbleSort, kFixedArraySize, compareCount, swapCount);
     std::cout << "Повторная сортировка пузырьком по возрастанию: ";
-    PrintArray(arrayBubbleSort, kStaticArraySize);
-    PrintResult(comparisons, swaps);
+    PrintArray(arrayBubbleSort, kFixedArraySize);
+    PrintResult(compareCount, swapCount);
     std::cout << "-------------------------------------------------\n";
-    BubbleSort(arrayBubbleSort, kStaticArraySize, comparisons, swaps, false);
+    SortBubble(arrayBubbleSort, kFixedArraySize, compareCount, swapCount, false);
     std::cout << "Сортировка пузырьком по убыванию: ";
-    PrintArray(arrayBubbleSort, kStaticArraySize);
-    PrintResult(comparisons, swaps);
+    PrintArray(arrayBubbleSort, kFixedArraySize);
+    PrintResult(compareCount, swapCount);
 }
 
-void ExecuteDynamicArraySort() {
+void RunDynamicArrayExample() {
     int comparisons = 0;
     int swaps = 0;
 
@@ -176,7 +178,7 @@ void ExecuteDynamicArraySort() {
 
     int* arraySelectionSort = new int[arraySize];
 
-    FillArrayWithRandomValues(arraySelectionSort, arraySize);
+    FillArrayRandomValues(arraySelectionSort, arraySize);
 
     int* arrayBubbleSort = new int[arraySize];
 
@@ -185,10 +187,10 @@ void ExecuteDynamicArraySort() {
     std::cout << "Сортировка массива из " << arraySize << " элементов" << std::endl;
     std::cout << std::setw(kColumnWidthTitle) << "Сравнения\t" << "Перестановки" << std::endl;
     std::cout << "---------------------|-----------------------------------------\n";
-    SelectionSort(arraySelectionSort, arraySize, comparisons, swaps);
+    SortSelection(arraySelectionSort, arraySize, comparisons, swaps);
     std::cout << "Сортировка выбором   |" << std::setw(kColumnWidth) << comparisons << std::setw(kColumnWidth) << swaps<<std::endl;
     std::cout << "---------------------|-----------------------------------------\n";
-    BubbleSort(arrayBubbleSort, arraySize, comparisons, swaps);
+    SortBubble(arrayBubbleSort, arraySize, comparisons, swaps);
     std::cout << "Сортировка пузырьком |" << std::setw(kColumnWidth) << comparisons << std::setw(kColumnWidth) << swaps << std::endl;
     std::cout << "---------------------|-----------------------------------------\n";
     std::cout << std::endl;
@@ -208,10 +210,10 @@ void SelectSortMethod() {
 
     switch (static_cast<ArrayChoose>(arrayType)) {
         case ArrayChoose::Static:
-            ExecuteStaticArraySort();
+            RunStaticArrayExample();
             break;
         case ArrayChoose::Dynamic:
-            ExecuteDynamicArraySort();
+            RunDynamicArrayExample();
             break;
         default:
             std::cout << "Введен неверный номер метода сортировки." << std::endl;

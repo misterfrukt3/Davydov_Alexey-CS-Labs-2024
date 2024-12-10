@@ -1,0 +1,4 @@
+/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/build/CMakeFiles/Example.dir
+/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/build/CMakeFiles/clang-format.dir
+/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/build/CMakeFiles/edit_cache.dir
+/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/build/CMakeFiles/rebuild_cache.dir
