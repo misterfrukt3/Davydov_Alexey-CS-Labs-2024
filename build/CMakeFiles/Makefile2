@@ -63,11 +63,11 @@ CMAKE_BINARY_DIR = /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Example.dir/all
+all: CMakeFiles/lab_5.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/Example.dir/codegen
+codegen: CMakeFiles/lab_5.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -75,40 +75,40 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Example.dir/clean
+clean: CMakeFiles/lab_5.dir/clean
 clean: CMakeFiles/clang-format.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Example.dir
+# Target rules for target CMakeFiles/lab_5.dir
 
 # All Build rule for target.
-CMakeFiles/Example.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.dir/build.make CMakeFiles/Example.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.dir/build.make CMakeFiles/Example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/build/CMakeFiles --progress-num=1,2,3 "Built target Example"
-.PHONY : CMakeFiles/Example.dir/all
+CMakeFiles/lab_5.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_5.dir/build.make CMakeFiles/lab_5.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_5.dir/build.make CMakeFiles/lab_5.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/build/CMakeFiles --progress-num=1,2,3 "Built target lab_5"
+.PHONY : CMakeFiles/lab_5.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Example.dir/rule: cmake_check_build_system
+CMakeFiles/lab_5.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Example.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/lab_5.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/build/CMakeFiles 0
-.PHONY : CMakeFiles/Example.dir/rule
+.PHONY : CMakeFiles/lab_5.dir/rule
 
 # Convenience name for target.
-Example: CMakeFiles/Example.dir/rule
-.PHONY : Example
+lab_5: CMakeFiles/lab_5.dir/rule
+.PHONY : lab_5
 
 # codegen rule for target.
-CMakeFiles/Example.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.dir/build.make CMakeFiles/Example.dir/codegen
-.PHONY : CMakeFiles/Example.dir/codegen
+CMakeFiles/lab_5.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_5.dir/build.make CMakeFiles/lab_5.dir/codegen
+.PHONY : CMakeFiles/lab_5.dir/codegen
 
 # clean rule for target.
-CMakeFiles/Example.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.dir/build.make CMakeFiles/Example.dir/clean
-.PHONY : CMakeFiles/Example.dir/clean
+CMakeFiles/lab_5.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_5.dir/build.make CMakeFiles/lab_5.dir/clean
+.PHONY : CMakeFiles/lab_5.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/clang-format.dir

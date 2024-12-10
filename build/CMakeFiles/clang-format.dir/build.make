@@ -67,7 +67,7 @@ include CMakeFiles/clang-format.dir/compiler_depend.make
 include CMakeFiles/clang-format.dir/progress.make
 
 CMakeFiles/clang-format:
-	clang-format --dry-run -Werror /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/main.cpp /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Integration.cpp /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Integration.hpp
+	clang-format --dry-run -Werror /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/main.cpp /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Sorting.cpp /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Sorting.hpp
 
 CMakeFiles/clang-format.dir/codegen:
 .PHONY : CMakeFiles/clang-format.dir/codegen

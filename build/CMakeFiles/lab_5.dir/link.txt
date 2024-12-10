@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/lab_5.dir/link.d CMakeFiles/lab_5.dir/main.cpp.o CMakeFiles/lab_5.dir/Sorting.cpp.o -o lab_5

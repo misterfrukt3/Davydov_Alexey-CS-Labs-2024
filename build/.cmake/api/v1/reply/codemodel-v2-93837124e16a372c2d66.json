@@ -28,7 +28,7 @@
 					[
 						0
 					],
-					"name" : "Example",
+					"name" : "lab_5",
 					"targetIndexes" : 
 					[
 						0,
@@ -40,16 +40,16 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "Example::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Example-735cbf563f9030c7968b.json",
-					"name" : "Example",
+					"id" : "clang-format::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-clang-format-0f0e4dc4a884f142a970.json",
+					"name" : "clang-format",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "clang-format::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-clang-format-0f0e4dc4a884f142a970.json",
-					"name" : "clang-format",
+					"id" : "lab_5::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lab_5-9dc3a7d13dd432b27994.json",
+					"name" : "lab_5",
 					"projectIndex" : 0
 				}
 			]

@@ -117,17 +117,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Example
+# Target rules for targets named lab_5
 
 # Build rule for target.
-Example: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Example
-.PHONY : Example
+lab_5: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab_5
+.PHONY : lab_5
 
 # fast build rule for target.
-Example/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.dir/build.make CMakeFiles/Example.dir/build
-.PHONY : Example/fast
+lab_5/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_5.dir/build.make CMakeFiles/lab_5.dir/build
+.PHONY : lab_5/fast
 
 #=============================================================================
 # Target rules for targets named clang-format
@@ -142,36 +142,36 @@ clang-format/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/clang-format.dir/build.make CMakeFiles/clang-format.dir/build
 .PHONY : clang-format/fast
 
-Integration.o: Integration.cpp.o
-.PHONY : Integration.o
+Sorting.o: Sorting.cpp.o
+.PHONY : Sorting.o
 
 # target to build an object file
-Integration.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.dir/build.make CMakeFiles/Example.dir/Integration.cpp.o
-.PHONY : Integration.cpp.o
+Sorting.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_5.dir/build.make CMakeFiles/lab_5.dir/Sorting.cpp.o
+.PHONY : Sorting.cpp.o
 
-Integration.i: Integration.cpp.i
-.PHONY : Integration.i
+Sorting.i: Sorting.cpp.i
+.PHONY : Sorting.i
 
 # target to preprocess a source file
-Integration.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.dir/build.make CMakeFiles/Example.dir/Integration.cpp.i
-.PHONY : Integration.cpp.i
+Sorting.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_5.dir/build.make CMakeFiles/lab_5.dir/Sorting.cpp.i
+.PHONY : Sorting.cpp.i
 
-Integration.s: Integration.cpp.s
-.PHONY : Integration.s
+Sorting.s: Sorting.cpp.s
+.PHONY : Sorting.s
 
 # target to generate assembly for a file
-Integration.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.dir/build.make CMakeFiles/Example.dir/Integration.cpp.s
-.PHONY : Integration.cpp.s
+Sorting.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_5.dir/build.make CMakeFiles/lab_5.dir/Sorting.cpp.s
+.PHONY : Sorting.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.dir/build.make CMakeFiles/Example.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_5.dir/build.make CMakeFiles/lab_5.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -179,7 +179,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.dir/build.make CMakeFiles/Example.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_5.dir/build.make CMakeFiles/lab_5.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -187,7 +187,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Example.dir/build.make CMakeFiles/Example.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_5.dir/build.make CMakeFiles/lab_5.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -199,10 +199,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... clang-format"
-	@echo "... Example"
-	@echo "... Integration.o"
-	@echo "... Integration.i"
-	@echo "... Integration.s"
+	@echo "... lab_5"
+	@echo "... Sorting.o"
+	@echo "... Sorting.i"
+	@echo "... Sorting.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
