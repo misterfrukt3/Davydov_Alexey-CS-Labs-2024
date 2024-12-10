@@ -53,8 +53,6 @@ void PrintArray(const int* array, size_t arraySize) {
 void PrintResult(int comparisons, int swaps) {
     std::cout << "Количество сравнений: " << comparisons << std::endl;
     std::cout << "Количество перестановок: " << swaps << std::endl;
-
-    std::cout << std::endl;
 }
 }  // namespace
 
@@ -127,41 +125,36 @@ void ExecuteStaticArraySort() {
 
     std::cout << "Исходный массив: ";
     PrintArray(arraySelectionSort, kStaticArraySize);
-    std::cout << std::endl;
-
+    std::cout << "-------------------------------------------------\n";
     SelectionSort(arraySelectionSort, kStaticArraySize, comparisons, swaps);
     std::cout << "Сортировка выбором по возрастанию: ";
     PrintArray(arraySelectionSort, kStaticArraySize);
     PrintResult(comparisons, swaps);
-
+    std::cout << "-------------------------------------------------\n";
     SelectionSort(arraySelectionSort, kStaticArraySize, comparisons, swaps);
     std::cout << "Повторная сортировка выбором по возрастанию: ";
     PrintArray(arraySelectionSort, kStaticArraySize);
     PrintResult(comparisons, swaps);
-
+    std::cout << "-------------------------------------------------\n";
     SelectionSort(arraySelectionSort, kStaticArraySize, comparisons, swaps, false);
     std::cout << "Сортировка выбором по убыванию: ";
     PrintArray(arraySelectionSort, kStaticArraySize);
     PrintResult(comparisons, swaps);
-
-    std::cout << std::endl;
-
+    std::cout << "-------------------------------------------------\n";
     BubbleSort(arrayBubbleSort, kStaticArraySize, comparisons, swaps);
     std::cout << "Сортировка пузырьком по возрастанию: ";
     PrintArray(arrayBubbleSort, kStaticArraySize);
     PrintResult(comparisons, swaps);
-
+    std::cout << "-------------------------------------------------\n";
     BubbleSort(arrayBubbleSort, kStaticArraySize, comparisons, swaps);
     std::cout << "Повторная сортировка пузырьком по возрастанию: ";
     PrintArray(arrayBubbleSort, kStaticArraySize);
     PrintResult(comparisons, swaps);
-
+    std::cout << "-------------------------------------------------\n";
     BubbleSort(arrayBubbleSort, kStaticArraySize, comparisons, swaps, false);
     std::cout << "Сортировка пузырьком по убыванию: ";
     PrintArray(arrayBubbleSort, kStaticArraySize);
     PrintResult(comparisons, swaps);
-
-    std::cout << '\n';
 }
 
 void ExecuteDynamicArraySort() {
@@ -189,13 +182,15 @@ void ExecuteDynamicArraySort() {
 
     CopyArray(arraySelectionSort, arrayBubbleSort, arraySize);
 
-    std::cout << "Сортировка массива из" << arraySize << "элементов" << std::endl;
+    std::cout << "Сортировка массива из " << arraySize << " элементов" << std::endl;
     std::cout << std::setw(kColumnWidthTitle) << "Сравнения\t" << "Перестановки" << std::endl;
+    std::cout << "---------------------|-----------------------------------------\n";
     SelectionSort(arraySelectionSort, arraySize, comparisons, swaps);
-    std::cout << "Сортировка выбором  " << std::setw(kColumnWidth) << comparisons << std::setw(kColumnWidth) << swaps << std::endl;
-
+    std::cout << "Сортировка выбором   |" << std::setw(kColumnWidth) << comparisons << std::setw(kColumnWidth) << swaps<<std::endl;
+    std::cout << "---------------------|-----------------------------------------\n";
     BubbleSort(arrayBubbleSort, arraySize, comparisons, swaps);
-    std::cout << "Сортировка пузырьком" << std::setw(kColumnWidth) << comparisons << std::setw(kColumnWidth) << swaps << std::endl;
+    std::cout << "Сортировка пузырьком |" << std::setw(kColumnWidth) << comparisons << std::setw(kColumnWidth) << swaps << std::endl;
+    std::cout << "---------------------|-----------------------------------------\n";
     std::cout << std::endl;
 
     delete[] arrayBubbleSort;
