@@ -23,5 +23,5 @@ void RunHalfDivisionMethod();
 
 void RunApplication();
 
-void MethodsChoice();
+void SelectMethod();
 }  // namespace FindEquationRoot

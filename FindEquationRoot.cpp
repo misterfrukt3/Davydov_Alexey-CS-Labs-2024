@@ -66,12 +66,12 @@ namespace FindEquationRoot {
 
 [[nodiscard]] Equation CalculateNewtonsMethod(const double coefficient, const double calculationAccuracy) {
     double x = 0.0;
-    double function = CalculateFunction(x, coefficient) / CalculateFunctionDerivative(x, coefficient);
+    double fX = CalculateFunction(x, coefficient) / CalculateFunctionDerivative(x, coefficient);
     int iterations = 0;
 
-    while (std::abs(function) > calculationAccuracy && iterations <= maxIterations) {
-        x -= (function);
-        function = CalculateFunction(x, coefficient) / CalculateFunctionDerivative(x, coefficient);
+    while (std::abs(fX) > calculationAccuracy && iterations <= maxIterations) {
+        x -= (fX);
+        fX = CalculateFunction(x, coefficient) / CalculateFunctionDerivative(x, coefficient);
         ++iterations;
     }
 
