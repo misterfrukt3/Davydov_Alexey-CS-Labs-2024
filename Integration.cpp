@@ -123,7 +123,7 @@ void PrintTabl(DataForPrint results[], int k) {
     std::cout << "+-----------+-----------------+-----------------+---------+\n";
 }
 
-void RunApp() {
+void RunApplication() {
     srand(static_cast<unsigned int>(time(0)));
 
     double eps[] = {0.01, 0.001, 0.0001, 0.00001, 0.000001};

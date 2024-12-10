@@ -32,6 +32,6 @@ struct DataForPrint {
 
 void PrintTabl(DataForPrint i_prn[], int k);
 
-void RunApp();
+void RunApplication();
 
 }

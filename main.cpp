@@ -1,6 +1,6 @@
 #include "Integration.hpp"
 
 int main(int, char**) {
-    Integration::RunApp();
+    Integration::RunApplication();
     return 0;
 }
