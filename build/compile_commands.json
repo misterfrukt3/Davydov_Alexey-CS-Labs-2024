@@ -1,14 +1,14 @@
 [
 {
   "directory": "/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/build",
-  "command": "/usr/bin/clang++-18   -g -std=gnu++20 -Wall -Wextra -Werror -Wpedantic -o CMakeFiles/Example.dir/main.cpp.o -c /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/main.cpp",
+  "command": "/usr/bin/clang++-18   -g -std=gnu++20 -Wall -Wextra -Werror -Wpedantic -o CMakeFiles/lab_4.dir/main.cpp.o -c /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/main.cpp",
   "file": "/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/main.cpp",
-  "output": "CMakeFiles/Example.dir/main.cpp.o"
+  "output": "CMakeFiles/lab_4.dir/main.cpp.o"
 },
 {
   "directory": "/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/build",
-  "command": "/usr/bin/clang++-18   -g -std=gnu++20 -Wall -Wextra -Werror -Wpedantic -o CMakeFiles/Example.dir/Integration.cpp.o -c /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Integration.cpp",
-  "file": "/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Integration.cpp",
-  "output": "CMakeFiles/Example.dir/Integration.cpp.o"
+  "command": "/usr/bin/clang++-18   -g -std=gnu++20 -Wall -Wextra -Werror -Wpedantic -o CMakeFiles/lab_4.dir/Sorting.cpp.o -c /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Sorting.cpp",
+  "file": "/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Sorting.cpp",
+  "output": "CMakeFiles/lab_4.dir/Sorting.cpp.o"
 }
 ]

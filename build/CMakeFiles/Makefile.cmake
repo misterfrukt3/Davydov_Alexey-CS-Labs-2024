@@ -20,8 +20,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/snap/cmake/1433/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake"
   "/snap/cmake/1433/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake"
   "/snap/cmake/1433/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
-  "/snap/cmake/1433/share/cmake-3.31/Modules/Compiler/GNU-C.cmake"
-  "/snap/cmake/1433/share/cmake-3.31/Modules/Compiler/GNU-CXX.cmake"
+  "/snap/cmake/1433/share/cmake-3.31/Modules/Compiler/Clang-C.cmake"
+  "/snap/cmake/1433/share/cmake-3.31/Modules/Compiler/Clang-CXX.cmake"
+  "/snap/cmake/1433/share/cmake-3.31/Modules/Compiler/Clang.cmake"
   "/snap/cmake/1433/share/cmake-3.31/Modules/Compiler/GNU.cmake"
   "/snap/cmake/1433/share/cmake-3.31/Modules/Internal/CMakeCLinkerInformation.cmake"
   "/snap/cmake/1433/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake"
@@ -33,6 +34,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/snap/cmake/1433/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-C.cmake"
   "/snap/cmake/1433/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-CXX.cmake"
   "/snap/cmake/1433/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU.cmake"
+  "/snap/cmake/1433/share/cmake-3.31/Modules/Platform/Linux-Clang-C.cmake"
+  "/snap/cmake/1433/share/cmake-3.31/Modules/Platform/Linux-Clang-CXX.cmake"
   "/snap/cmake/1433/share/cmake-3.31/Modules/Platform/Linux-GNU-C.cmake"
   "/snap/cmake/1433/share/cmake-3.31/Modules/Platform/Linux-GNU-CXX.cmake"
   "/snap/cmake/1433/share/cmake-3.31/Modules/Platform/Linux-GNU.cmake"
@@ -54,6 +57,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/lab_5.dir/DependInfo.cmake"
+  "CMakeFiles/lab_4.dir/DependInfo.cmake"
   "CMakeFiles/clang-format.dir/DependInfo.cmake"
   )

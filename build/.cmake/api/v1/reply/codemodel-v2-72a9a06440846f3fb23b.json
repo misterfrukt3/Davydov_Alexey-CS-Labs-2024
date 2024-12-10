@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.20"
@@ -20,7 +20,7 @@
 					]
 				}
 			],
-			"name" : "",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -28,7 +28,7 @@
 					[
 						0
 					],
-					"name" : "lab_5",
+					"name" : "lab_4",
 					"targetIndexes" : 
 					[
 						0,
@@ -41,15 +41,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "clang-format::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-clang-format-0f0e4dc4a884f142a970.json",
+					"jsonFile" : "target-clang-format-Debug-0f0e4dc4a884f142a970.json",
 					"name" : "clang-format",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "lab_5::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-lab_5-9dc3a7d13dd432b27994.json",
-					"name" : "lab_5",
+					"id" : "lab_4::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lab_4-Debug-2b8e074b7e27da9d84fb.json",
+					"name" : "lab_4",
 					"projectIndex" : 0
 				}
 			]

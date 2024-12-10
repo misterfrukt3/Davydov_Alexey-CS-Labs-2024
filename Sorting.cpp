@@ -8,7 +8,7 @@ namespace {
 const int kRandomMin = 0;
 const int kRandomMax = 99;
 
-const size_t kFixedArraySize = 7;
+const size_t kFixedArraySize = 5;
 
 const int kColumnWidth = 20;
 const int kColumnWidthTitle = 50;
@@ -65,9 +65,9 @@ void SortSelection(int* array, size_t arraySize, int& compareCount, int& swapCou
     compareCount = 0;
     swapCount = 0;
 
-    for (size_t i = 0; i < arraySize - 2; ++i) {
+    for (size_t i = 0; i < arraySize - 1; ++i) {
         size_t requiredIndex = i;
-        for (size_t j = i + 1; j < arraySize; ++j) {
+        for (size_t j = i+1; j < arraySize; ++j) {
             if (ascending ? (array[j] < array[requiredIndex]) : (array[j] > array[requiredIndex])) {
                 requiredIndex = j;
             }
@@ -81,6 +81,7 @@ void SortSelection(int* array, size_t arraySize, int& compareCount, int& swapCou
             ++swapCount;
         }
     }
+
 }
 
 void SortBubble(int* array, size_t arraySize, int& compareCount, int& swapCount, bool ascending) {

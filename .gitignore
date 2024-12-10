@@ -10,7 +10,7 @@
 *.lo
 *.o
 *.obj
-
+*.out
 # Precompiled Headers
 *.gch
 *.pch
@@ -19,6 +19,7 @@
 *.so
 *.dylib
 *.dll
+*.
 
 # Fortran module files
 *.mod

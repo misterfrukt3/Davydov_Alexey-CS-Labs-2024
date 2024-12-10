@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "lab_5"
+			"path" : "lab_4"
 		}
 	],
 	"backtrace" : 1,
@@ -49,7 +49,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-std=gnu++20"
+					"fragment" : "-g -std=gnu++20"
 				},
 				{
 					"backtrace" : 2,
@@ -84,11 +84,15 @@
 			]
 		}
 	],
-	"id" : "lab_5::@6890427a1f51a3e7e1df",
+	"id" : "lab_4::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
 			{
 				"fragment" : "",
 				"role" : "flags"
@@ -96,8 +100,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "lab_5",
-	"nameOnDisk" : "lab_5",
+	"name" : "lab_4",
+	"nameOnDisk" : "lab_4",
 	"paths" : 
 	{
 		"build" : ".",

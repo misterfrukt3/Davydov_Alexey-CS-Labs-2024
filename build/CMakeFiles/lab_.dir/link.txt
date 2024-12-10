@@ -1,0 +1,1 @@
+/usr/bin/clang++-18 -g -Xlinker --dependency-file=CMakeFiles/lab_.dir/link.d CMakeFiles/lab_.dir/main.cpp.o CMakeFiles/lab_.dir/Sorting.cpp.o -o lab_

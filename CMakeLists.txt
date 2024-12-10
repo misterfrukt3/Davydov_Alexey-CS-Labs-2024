@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(lab_5)
+project(lab_4)
 set(CMAKE_CXX_CLANG_TIDY "clang-tidy")
 # файлы перечисляются либо через пустую строку, либо через пробел
 set(SOURCES

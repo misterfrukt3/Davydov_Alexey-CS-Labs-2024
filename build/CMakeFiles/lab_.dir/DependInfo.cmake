@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Integration.cpp" "CMakeFiles/Example.dir/Integration.cpp.o" "gcc" "CMakeFiles/Example.dir/Integration.cpp.o.d"
-  "/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/main.cpp" "CMakeFiles/Example.dir/main.cpp.o" "gcc" "CMakeFiles/Example.dir/main.cpp.o.d"
-  "" "Example" "gcc" "CMakeFiles/Example.dir/link.d"
+  "/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Sorting.cpp" "CMakeFiles/lab_.dir/Sorting.cpp.o" "gcc" "CMakeFiles/lab_.dir/Sorting.cpp.o.d"
+  "/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/main.cpp" "CMakeFiles/lab_.dir/main.cpp.o" "gcc" "CMakeFiles/lab_.dir/main.cpp.o.d"
+  "" "lab_" "gcc" "CMakeFiles/lab_.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

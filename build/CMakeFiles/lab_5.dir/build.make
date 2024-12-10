@@ -76,29 +76,29 @@ CMakeFiles/lab_5.dir/main.cpp.o: CMakeFiles/lab_5.dir/flags.make
 CMakeFiles/lab_5.dir/main.cpp.o: /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/main.cpp
 CMakeFiles/lab_5.dir/main.cpp.o: CMakeFiles/lab_5.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lab_5.dir/main.cpp.o"
-	$(CMAKE_COMMAND) -E __run_co_compile --tidy="clang-tidy;--extra-arg-before=--driver-mode=g++" --source=/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/main.cpp -- /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab_5.dir/main.cpp.o -MF CMakeFiles/lab_5.dir/main.cpp.o.d -o CMakeFiles/lab_5.dir/main.cpp.o -c /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/main.cpp
+	$(CMAKE_COMMAND) -E __run_co_compile --tidy="clang-tidy;--extra-arg-before=--driver-mode=g++" --source=/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/main.cpp -- /usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab_5.dir/main.cpp.o -MF CMakeFiles/lab_5.dir/main.cpp.o.d -o CMakeFiles/lab_5.dir/main.cpp.o -c /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/main.cpp
 
 CMakeFiles/lab_5.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/lab_5.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/main.cpp > CMakeFiles/lab_5.dir/main.cpp.i
+	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/main.cpp > CMakeFiles/lab_5.dir/main.cpp.i
 
 CMakeFiles/lab_5.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/lab_5.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/main.cpp -o CMakeFiles/lab_5.dir/main.cpp.s
+	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/main.cpp -o CMakeFiles/lab_5.dir/main.cpp.s
 
 CMakeFiles/lab_5.dir/Sorting.cpp.o: CMakeFiles/lab_5.dir/flags.make
 CMakeFiles/lab_5.dir/Sorting.cpp.o: /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Sorting.cpp
 CMakeFiles/lab_5.dir/Sorting.cpp.o: CMakeFiles/lab_5.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lab_5.dir/Sorting.cpp.o"
-	$(CMAKE_COMMAND) -E __run_co_compile --tidy="clang-tidy;--extra-arg-before=--driver-mode=g++" --source=/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Sorting.cpp -- /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab_5.dir/Sorting.cpp.o -MF CMakeFiles/lab_5.dir/Sorting.cpp.o.d -o CMakeFiles/lab_5.dir/Sorting.cpp.o -c /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Sorting.cpp
+	$(CMAKE_COMMAND) -E __run_co_compile --tidy="clang-tidy;--extra-arg-before=--driver-mode=g++" --source=/home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Sorting.cpp -- /usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab_5.dir/Sorting.cpp.o -MF CMakeFiles/lab_5.dir/Sorting.cpp.o.d -o CMakeFiles/lab_5.dir/Sorting.cpp.o -c /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Sorting.cpp
 
 CMakeFiles/lab_5.dir/Sorting.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/lab_5.dir/Sorting.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Sorting.cpp > CMakeFiles/lab_5.dir/Sorting.cpp.i
+	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Sorting.cpp > CMakeFiles/lab_5.dir/Sorting.cpp.i
 
 CMakeFiles/lab_5.dir/Sorting.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/lab_5.dir/Sorting.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Sorting.cpp -o CMakeFiles/lab_5.dir/Sorting.cpp.s
+	/usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/misterfrukt/CS-Labs/Davydov_Alexey-CS-Labs-2024/Sorting.cpp -o CMakeFiles/lab_5.dir/Sorting.cpp.s
 
 # Object files for target lab_5
 lab_5_OBJECTS = \
