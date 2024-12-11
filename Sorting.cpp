@@ -8,7 +8,7 @@ namespace {
 const int kRandomMin = 0;
 const int kRandomMax = 99;
 
-const size_t kFixedArraySize = 5;
+const size_t kFixedArraySize = 7;
 
 const int kColumnWidth = 20;
 const int kColumnWidthTitle = 50;
