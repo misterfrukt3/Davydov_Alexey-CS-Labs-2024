@@ -16,7 +16,7 @@ void printMatrix(double** matrix, int rows, int columns, int precision, bool exp
 
     for (int page = 0; page < pagesCount; ++page) {
         for (int row = 0; row < rows; ++row) {
-            
+
             for (int col = 0; col < elementsInOneRow; ++col) {
                 int index = page * elementsInOneRow + col;
                 if (index < columns) {
@@ -35,7 +35,6 @@ void printMatrix(double** matrix, int rows, int columns, int precision, bool exp
             std::cout << std::setfill(' ');
         }
     }
-    
+
     std::cout << std::setfill('=') << std::setw(maxLineLength) << "=" << std::endl << std::setfill(' ');
 }
-
