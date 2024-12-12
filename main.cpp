@@ -1,5 +1,4 @@
-#include "mprinter.hpp" 
-
+#include "mprinter.hpp"
 
 int main() {
     mprinter::RunApplication();

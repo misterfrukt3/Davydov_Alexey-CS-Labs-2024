@@ -5,8 +5,17 @@
 #include <iostream>
 #include <random>
 
+namespace {
+const int kLeftLimitMatrixDimensions = 8;
+const int kRightLimitMatrixDimensions = 15;
 
+const int kLeftLimitPrecision = 3;
+const int kRightLimitPrecision = 5;
 
+const int kStaticMatricSize = 10;
+
+const int kPartThreeValue = 20;
+}  // namespace
 
 namespace mprinter {
 long Factorial(int n) {
@@ -18,12 +27,10 @@ long Factorial(int n) {
 }
 
 int GenRandomNumber(int minVal, int maxVal) {
-    // Initialize a random number generator
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> distrib(minVal, maxVal);
 
-    // Generate random number in the range [min, max]
     int randomValue = distrib(gen);
     return randomValue;
 }
@@ -33,12 +40,11 @@ double GenerateMatrixElementUpper(int row, int col) {
 }
 
 double GenerateMatrixElementLower(int row, int col) {
-    return std::pow(-1.0,row) / std::pow(Factorial(col), row);
+    return std::pow(-1.0, row) / std::pow(Factorial(col), row);
 }
 
 double** CreateMatrix(int rows, int cols) {
     auto** matrix = new double*[rows];
-    // Iterates over matrix and creates every row
     for (int i = 0; i < rows; i++) {
         matrix[i] = new double[cols];
     }
@@ -46,8 +52,9 @@ double** CreateMatrix(int rows, int cols) {
 }
 
 void DeleteMatrix(double** matrix, int rows) {
-    if (matrix == nullptr)
-        return;  // Проверка на случай, если указатель null
+    if (matrix == nullptr) {
+        return;
+    }
     for (int i = 0; i < rows; i++) {
         delete[] matrix[i];  // Удаление каждой строки
     }
@@ -57,28 +64,30 @@ void DeleteMatrix(double** matrix, int rows) {
 void FillMatrix(double** matrix, int rows, int cols) {
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-            if (i < j)
-                matrix[i][j] = GenerateMatrixElementUpper(i+1, j+1);
-            else if (i > j)
-                matrix[i][j] = GenerateMatrixElementLower(i+1, j+1);
-            else
+            if (i < j) {
+                matrix[i][j] = GenerateMatrixElementUpper(i + 1, j + 1);
+            } else if (i > j) {
+                matrix[i][j] = GenerateMatrixElementLower(i + 1, j + 1);
+            } else {
                 matrix[i][j] = 1;
+            }
         }
     }
 }
 
 void PrintMatrix(double** matrix, int rows, int cols, OutputMode outputMode, int precision, int maxLineLength) {
     int margin = 4;
-    if (outputMode == OutputMode::Exponential)
+    if (outputMode == OutputMode::Exponential) {
         margin += 8;
+    }
     int oneElementWidth = precision + margin;
     int elenemtsInOneRow = maxLineLength / oneElementWidth;
     int tableWidth = std::min(oneElementWidth * std::min(elenemtsInOneRow, cols) + margin, maxLineLength + margin);
     int pagesCount = cols / elenemtsInOneRow;
-    if (cols % elenemtsInOneRow != 0)
+    if (cols % elenemtsInOneRow != 0) {
         pagesCount++;
+    }
 
-    // Print "=======..." (start of table) and configures output
     if (outputMode == OutputMode::Fixed) {
         std::cout << std::fixed;
     } else {
@@ -87,16 +96,15 @@ void PrintMatrix(double** matrix, int rows, int cols, OutputMode outputMode, int
     std::cout << std::setprecision(precision) << std::setfill('=');
     std::cout << std::setw(tableWidth) << "=" << std::endl << std::setfill(' ');
 
-    // Printing table
     for (int i = 0; i < pagesCount; i++) {
         for (int j = 0; j < rows; j++) {
             for (int k = 0; k < elenemtsInOneRow; k++) {
-                if (i * elenemtsInOneRow + k < cols)
+                if (i * elenemtsInOneRow + k < cols) {
                     std::cout << std::setw(oneElementWidth) << matrix[j][i * elenemtsInOneRow + k];
+                }
             }
             std::cout << std::endl;
         }
-        // If it was last row and wasn't last page separates pages by print "-------..."
         if (i != pagesCount - 1) {
             std::cout << std::setfill('-') << std::setw(tableWidth) << '-' << std::endl;
             std::cout << std::setfill(' ');
@@ -107,12 +115,11 @@ void PrintMatrix(double** matrix, int rows, int cols, OutputMode outputMode, int
 }
 
 void RunApplication() {
-
     std::cout << std::endl << "Часть 1" << std::endl;
 
-    int rows = GenRandomNumber(8, 15);
-    int cols = GenRandomNumber(8, 15);
-    int precision = GenRandomNumber(3, 8);
+    int rows = GenRandomNumber(kLeftLimitMatrixDimensions, kRightLimitMatrixDimensions);
+    int cols = GenRandomNumber(kLeftLimitMatrixDimensions, kRightLimitMatrixDimensions);
+    int precision = GenRandomNumber(kLeftLimitPrecision, kRightLimitPrecision);
     int mode = 0;
     std::cout << "Выберите тип вывода:\n    1) Фиксированный\n    2) Экспоненциальный\n";
     std::cin >> mode;
@@ -125,22 +132,20 @@ void RunApplication() {
     PrintMatrix(dynamicMatrix, rows, cols, outputMode, precision);
     DeleteMatrix(dynamicMatrix, rows);
 
-    // Part 2
     std::cout << std::endl << "Часть 2" << std::endl;
 
-    double staticMatrix[10][10];
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
-            staticMatrix[i][j] = (i+1) * 10 + (j+1);
+    double staticMatrix[kStaticMatricSize][kStaticMatricSize];
+    for (int i = 0; i < kStaticMatricSize; i++) {
+        for (int j = 0; j < kStaticMatricSize; j++) {
+            staticMatrix[i][j] = (i + 1) * kStaticMatricSize + (j + 1);
         }
     }
-    double* serviceArray[10];
-    for (int i = 0; i < 10; i++) {
+    double* serviceArray[kStaticMatricSize];
+    for (int i = 0; i < kStaticMatricSize; i++) {
         serviceArray[i] = staticMatrix[i];
     }
-    PrintMatrix(serviceArray, 10, 10, OutputMode::Fixed, 0);
+    PrintMatrix(serviceArray, kStaticMatricSize, kStaticMatricSize, OutputMode::Fixed, 0);
 
-    // Part 3
     std::cout << std::endl << "Часть 3" << std::endl;
 
     std::cout << staticMatrix << "  " << staticMatrix[0] << "  " << staticMatrix[2] << std::endl;
@@ -148,6 +153,5 @@ void RunApplication() {
     std::cout << *(*(staticMatrix + 1)) << "  " << *staticMatrix[1] << std::endl;
     std::cout << *(staticMatrix[0] + 1) << "  " << *(*staticMatrix + 1) << std::endl;
     std::cout << staticMatrix[0][20] << "  " << *(staticMatrix[0] + 20) << "  " << *staticMatrix[2] << std::endl;
-
 }
 }  // namespace mprinter
