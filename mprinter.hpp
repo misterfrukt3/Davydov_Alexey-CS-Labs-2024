@@ -6,7 +6,7 @@ namespace mprinter {
 
     enum class OutputMode {
         Fixed = 1,
-        Scientific = 2
+        Exponential = 2
     };
 
     double** CreateMatrix(int row, int col);
