@@ -15,9 +15,7 @@ const int kRightLimitPrecision = 5;
 const int kStaticMatricSize = 10;
 
 const int kPartThreeValue = 20;
-}  // namespace
 
-namespace mprinter {
 long Factorial(int n) {
     long result = 1;
     for (int i = 2; i <= n; i++) {
@@ -34,6 +32,10 @@ int GenRandomNumber(int minVal, int maxVal) {
     int randomValue = distrib(gen);
     return randomValue;
 }
+}  // namespace
+
+namespace mprinter {
+
 
 double GenerateMatrixElementUpper(int row, int col) {
     return (1.0 / std::pow(Factorial(col), row));
@@ -61,7 +63,7 @@ void DeleteMatrix(double** matrix, int rows) {
     delete[] matrix;  // Удаление массива указателей
 }
 
-void FillMatrix(double** matrix, int rows, int cols) {
+void FillMatrixA(double** matrix, int rows, int cols) {
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
             if (i < j) {
@@ -73,6 +75,21 @@ void FillMatrix(double** matrix, int rows, int cols) {
             }
         }
     }
+}
+void FillMatrixB(double B[kStaticMatricSize][kStaticMatricSize]) {
+    for (int i = 0; i < kStaticMatricSize; ++i) {
+        for (int j = 0; j < kStaticMatricSize; ++j) {
+            B[i][j] = (i+1) * kStaticMatricSize + (j+1);
+        }
+    }
+}
+
+double** GetPointerArray(double B[kStaticMatricSize][kStaticMatricSize]) {
+    double** pointerArray = new double*[kStaticMatricSize];
+    for (int i = 0; i < kStaticMatricSize; ++i) {
+        pointerArray[i] = B[i];
+    }
+    return pointerArray;
 }
 
 void PrintMatrix(double** matrix, int rows, int cols, OutputMode outputMode, int precision, int maxLineLength) {
@@ -128,23 +145,17 @@ void RunApplication() {
     std::cout << "Cтрок: " << rows << " Столбцов: " << cols << " Точность: " << precision << std::endl << std::endl;
 
     double** dynamicMatrix = CreateMatrix(rows, cols);
-    FillMatrix(dynamicMatrix, rows, cols);
+    FillMatrixA(dynamicMatrix, rows, cols);
     PrintMatrix(dynamicMatrix, rows, cols, outputMode, precision);
     DeleteMatrix(dynamicMatrix, rows);
 
     std::cout << std::endl << "Часть 2" << std::endl;
 
     double staticMatrix[kStaticMatricSize][kStaticMatricSize];
-    for (int i = 0; i < kStaticMatricSize; i++) {
-        for (int j = 0; j < kStaticMatricSize; j++) {
-            staticMatrix[i][j] = (i + 1) * kStaticMatricSize + (j + 1);
-        }
-    }
-    double* serviceArray[kStaticMatricSize];
-    for (int i = 0; i < kStaticMatricSize; i++) {
-        serviceArray[i] = staticMatrix[i];
-    }
-    PrintMatrix(serviceArray, kStaticMatricSize, kStaticMatricSize, OutputMode::Fixed, 0);
+    FillMatrixB(staticMatrix);
+
+    double** pointerArray = GetPointerArray(staticMatrix);
+    PrintMatrix(pointerArray, kStaticMatricSize, kStaticMatricSize, OutputMode::Fixed, 0);
 
     std::cout << std::endl << "Часть 3" << std::endl;
 
