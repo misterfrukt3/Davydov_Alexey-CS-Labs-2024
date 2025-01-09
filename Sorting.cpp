@@ -200,7 +200,7 @@ void RunDynamicArrayExample() {
     delete[] arraySelectionSort;
 }
 
-void SelectArrayMethod() {
+void SelectArrayType() {
     int arrayType = 0;
     std::cout << "Виды массивов:\n"
               << "1. Статический массив\n"
@@ -226,7 +226,7 @@ void RunApplication() {
     char continueExecution = 'y';
 
     while (continueExecution == 'y') {
-        SelectArrayMethod();
+        SelectArrayType();
         std::cout << "Продолжить работу? (y/n)\n";
         std::cin >> continueExecution;
     }

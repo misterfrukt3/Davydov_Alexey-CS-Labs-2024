@@ -14,7 +14,7 @@ void SortBubble(int* array, size_t arraySize, int& comparisons, int& swaps, bool
 void RunStaticArrayExample();
 void RunDynamicArrayExample();
 
-void SelectArrayMethod();
+void SelectArrayType();
 
 void RunApplication();
 }  // namespace Sorting
