@@ -93,7 +93,7 @@ void SortBubble(int* array, size_t arraySize, int& compareCount, int& swapCount,
     swapCount = 0;
 
     bool swapped = false;
-
+    
     for (size_t i = 0; i < arraySize - 1; ++i) {
         swapped = false;
         for (size_t j = 0; j < arraySize - i - 1; ++j) {
@@ -161,8 +161,8 @@ void RunStaticArrayExample() {
 }
 
 void RunDynamicArrayExample() {
-    int comparisons = 0;
-    int swaps = 0;
+    int compareCount = 0;
+    int swapCount = 0;
 
     int inputSize = 0;
     size_t arraySize = 0;
@@ -188,11 +188,11 @@ void RunDynamicArrayExample() {
     std::cout << "Сортировка массива из " << arraySize << " элементов" << std::endl;
     std::cout << std::setw(kColumnWidthTitle) << "Сравнения\t" << "Перестановки" << std::endl;
     std::cout << "---------------------|-----------------------------------------\n";
-    SortSelection(arraySelectionSort, arraySize, comparisons, swaps);
-    std::cout << "Сортировка выбором   |" << std::setw(kColumnWidth) << comparisons << std::setw(kColumnWidth) << swaps<<std::endl;
+    SortSelection(arraySelectionSort, arraySize, compareCount, swapCount);
+    std::cout << "Сортировка выбором   |" << std::setw(kColumnWidth) << compareCount << std::setw(kColumnWidth) << swapCount<<std::endl;
     std::cout << "---------------------|-----------------------------------------\n";
-    SortBubble(arrayBubbleSort, arraySize, comparisons, swaps);
-    std::cout << "Сортировка пузырьком |" << std::setw(kColumnWidth) << comparisons << std::setw(kColumnWidth) << swaps << std::endl;
+    SortBubble(arrayBubbleSort, arraySize, compareCount, swapCount);
+    std::cout << "Сортировка пузырьком |" << std::setw(kColumnWidth) << compareCount << std::setw(kColumnWidth) << swapCount << std::endl;
     std::cout << "---------------------|-----------------------------------------\n";
     std::cout << std::endl;
 
