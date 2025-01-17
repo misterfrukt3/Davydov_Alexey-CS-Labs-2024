@@ -1,0 +1,1 @@
+/usr/bin/clang++-18 -g -Xlinker --dependency-file=CMakeFiles/lab_7.dir/link.d CMakeFiles/lab_7.dir/main.cpp.o CMakeFiles/lab_7.dir/mprinter.cpp.o -o lab_7

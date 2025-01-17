@@ -58,14 +58,15 @@ void Task2() {
 
     if (a >= kANegativeDivision) {
         for (int i = kNoneNegativeAStart; i < kNoneNegativeALimit; i += kNoneNegativeAStep) {
-            S *= i * i - a;
+            S *= i * i;
         }
+        S -=a;
     } else {
         for (int i = kNegativeAStart; i < kNegativeALimit; i += kNegativeAStep) {
             S *= (i - 2);
         }
     }
-    std::cout << "Результат: " << S << std::endl;
+    std::cout << "Результат: " <<std::setprecision(7)<< S << std::endl;
 }
 
 void Task3() {
