@@ -12,9 +12,6 @@ const int kRightLimitMatrixDimensions = 15;
 const int kLeftLimitPrecision = 3;
 const int kRightLimitPrecision = 5;
 
-const int kStaticMatricSize = 10;
-
-const int kPartThreeValue = 20;
 
 long Factorial(int n) {
     long result = 1;
