@@ -94,17 +94,17 @@ double IntRect(FUN f, double a, double b, double eps, int* n) {
 }
 
 double IntTrap(FUN f, double a, double b, double eps, int* n) {
-    int N = 1;
+    int elementaryRectanglesCount = 1;
     double prevues = 0.0;
     double current = 0.0;
     double dx = 0.0;
 
     while (true) {
-        *n = N;
-        dx = (b - a) / N;
+        *n = elementaryRectanglesCount;
+        dx = (b - a) / elementaryRectanglesCount;
         current = (f(a) + f(b)) / kDivisionByTwo;
 
-        for (int i = 1; i < N; ++i) {
+        for (int i = 1; i < elementaryRectanglesCount; ++i) {
             double x = a + i * dx;
             current += f(x);
         }
@@ -114,10 +114,10 @@ double IntTrap(FUN f, double a, double b, double eps, int* n) {
             break;
         }
         prevues = current;
-        N *= 2;
+        elementaryRectanglesCount *= 2;
     }
 
-    *n = N;
+    *n = elementaryRectanglesCount;
     return current;
 }
 
